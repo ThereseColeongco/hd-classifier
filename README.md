@@ -1,0 +1,2 @@
+# Heart Disease Classifier
+Decided to use a neural network for this, even if UCI says accuracy and precision are highest with XGBoost classification and logistic regression, because I want to learn how to build a neural network using PyTorch.
