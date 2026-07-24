@@ -66,4 +66,13 @@ Gradient descent = repeatedly nudging input of cost function by some multiple of
 Sign of nudge tells us whether weight/bias should be nudged up (+) or down (-)
 Magnitude of nudge tells us whether weight/bias should be nudged a little, somewhat, or a lot (i.e. which changes matter more b/c big changes matter more/have bigger effect than small changes; some connections matter more for the training data)
 
+### Limitations of MLP
+
+Each layer is supposed to be breaking down the problem into subproblems such that each layer handles one subproblem, but that's not actually what happens necessarily. The patterns that the weights lead to may not be comprehensible at all, may seem very random, patterns very loose, yet it can recognize input data... because of this, when you input something random, it won't do something smart and be unsure (e.g. activating all neurons in last layer evenly or not at all), but instead, it confidently makes a prediction, even if it's entirely wrong. It can't create, it can only recognize b/c of tightl ocnstrained training setup. (from its POV, its entire universe is the training data. its cost function never gave it any other incentive other than to be completely confident in its decisions.)
+
+Do neural networks just memorize or does it actually learn things about the data like does its result correspond to some aspect of/pattern in the data or is it just memorizing this feature goes with this target/label? They're doing smth a little bit smarter than just memorizing. Random dataset -> struggling to find local minimum. Structured dataset (correct labels) -> drop very fast to find local minimum, so easier and faster to learn structured data
+
+Local minima that networks tend to learn are of roughly equal quality so if dataset is structured, should be able to find minima much more easily
+
 ### Backpropagation
+
