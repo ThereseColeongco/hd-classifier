@@ -57,14 +57,12 @@ Negative gradient of the cost function is the direction that tells you w/c nudge
 
 Takes weights/biases from random -> actual decision
 
-Algo for computing gradient efficiently = backpropagation
-
 cost function must have smooth output so we can find minimum w/c is why artificial neurons have continuously ranging activations rather than being binarily active/inactive like biological neurons
 
 Gradient descent = repeatedly nudging input of cost function by some multiple of negative gradient
 
 Sign of nudge tells us whether weight/bias should be nudged up (+) or down (-)
-Magnitude of nudge tells us whether weight/bias should be nudged a little, somewhat, or a lot (i.e. which changes matter more b/c big changes matter more/have bigger effect than small changes; some connections matter more for the training data)
+Magnitude of nudge tells us whether weight/bias should be nudged a little, somewhat, or a lot (i.e. which changes matter more b/c big changes matter more/have bigger effect than small changes; some connections matter more for the training data; tells how sensitive ost functino is to each weight/bias: cost of function is more sensitive to changes in weight with the larger magnitude nudge b/c that change has a magnitude-times greater effect)
 
 ### Limitations of MLP
 
@@ -75,4 +73,6 @@ Do neural networks just memorize or does it actually learn things about the data
 Local minima that networks tend to learn are of roughly equal quality so if dataset is structured, should be able to find minima much more easily
 
 ### Backpropagation
+
+Algo for computing gradient efficiently = backpropagation
 
