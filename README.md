@@ -49,4 +49,21 @@ Wanna tell it how to change weights/biases to make it better as well. What input
 #### What is gradient descent?
 If input space (weights/biases) is an xy-plane and the cost function is a surface above it, you would ask "which direction decreases C(x,y) most quickly (instead of asking about the slope)?" Multivariable calc. tells us the gradient of the function gives us the direction of steepest increase. Negative of the gradient tells us the direction of steepest decrease. Length of gradient vector is an indication for how steep the steepest slope is.
 
+Algorithm for minimizing cost function is to compute the gradient direction. Take a small step in negative gradient direction. Repeat that over and over.
+
+Putting vector of all the weights and biases into negative gradient of the cost function -> vector containing numbers telling you how much to nudge the weights and biases to most rapidly decrase the cost function.
+
+Negative gradient of the cost function is the direction that tells you w/c nudges to weights and biases is gonna cause the most rapid decrease to cost function. 
+
+Takes weights/biases from random -> actual decision
+
+Algo for computing gradient efficiently = backpropagation
+
+cost function must have smooth output so we can find minimum w/c is why artificial neurons have continuously ranging activations rather than being binarily active/inactive like biological neurons
+
+Gradient descent = repeatedly nudging input of cost function by some multiple of negative gradient
+
+Sign of nudge tells us whether weight/bias should be nudged up (+) or down (-)
+Magnitude of nudge tells us whether weight/bias should be nudged a little, somewhat, or a lot (i.e. which changes matter more b/c big changes matter more/have bigger effect than small changes; some connections matter more for the training data)
+
 ### Backpropagation
