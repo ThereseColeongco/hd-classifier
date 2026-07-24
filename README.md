@@ -21,7 +21,32 @@ Knowing what the weights and biases are and what they're doing is important for 
 
 All activations are organized into a vector and all weights are organized into a matrix and each number in the vector resulting from the multiplication = 1 of the activations
 
-### How does it learn appropriate weights and biases?
+### How does it learn appropriate weights and biases? Gradient descent
 
+We want an algorithm where we can show the neural network a bunch of training data and it'll adjust the weights and biases to improve performance on training data, and then give it testing data it's never seen before to see how well it perform on those (if model is accurate and generalizable, then we've succeeded)
+
+Gradient descent: find minimum of a function.
+Weights = representing the strengths of connections between neurons
+Biases = indication of whether neuron tends to be active or inactive
+
+1. Initialize weights and biases randomly
+2. Define cost function, a way of telling the computer they did wrong. Add up squares of differences between each of the trash activations and the value you want them to have (e.g. 0 for all neurons except 1 specific one, the correct one that you want to have a value of 1) = cost of single training example. Small cost when correct, large when network doesn't know what it's doing.
+
+Consider average cost of all training data -> measure of how bad the network is
+
+Neural network components:
+Input: training data
+Output: some prediction based on the training data
+Parameters: weights/biases
+
+Cost function is a layer on top of the neural network components:
+Input: weights/biases
+Output: 1 number (the cost)
+Parameters: the way it's defined depends on the network's behavior over all of its many training examples
+
+Wanna tell it how to change weights/biases to make it better as well. What input to the cost function (weights/biases) minimizes the result of the cost function (the cost)? Depending on the function, finding the minimum cannot feasibly be done explicitly. A more flexible tactic is to start at any point, and figure out which direction to step to make the output of the function lower (i.e. if slope is positive, shift to left. if slope is negative, shift to right.) Doing this repeatedly -> approach some local minimum of the function. No guarantee that the local minimum you end up at will be the lowest possible cost (i.e. the absolute minimum). When step size is proportional to slope, when slope gets closer to minimum, steps get smaller and smaller, preventing overshooting.
+
+#### What is gradient descent?
+If input space (weights/biases) is an xy-plane and the cost function is a surface above it, you would ask "which direction decreases C(x,y) most quickly (instead of asking about the slope)?" Multivariable calc. tells us the gradient of the function gives us the direction of steepest increase. Negative of the gradient tells us the direction of steepest decrease. Length of gradient vector is an indication for how steep the steepest slope is.
 
 ### Backpropagation
