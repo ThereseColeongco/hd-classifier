@@ -94,4 +94,6 @@ Stochastic gradient descent: Takes extremely long to add up every influence of e
 
 For this to work, you need lots of labelled training data. 
 
-Derivative represents rate of change. We want to understand how sensitive cost function is to small changes in weight, so derivative of cost w/ respect to weight. 
+Derivative represents rate of change. We want to understand how sensitive cost function is to small changes in weight, so derivative of cost w/ respect to weight. Nudge to weight causes nudge to z w/c causes nudge to *a* w/c causes nudge to cost.
+![screenshot from 3b1b backprop calculus showing that chain rule is how we nudge cost](image.png)
+
