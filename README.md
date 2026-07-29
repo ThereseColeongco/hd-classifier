@@ -94,6 +94,6 @@ Stochastic gradient descent: Takes extremely long to add up every influence of e
 
 For this to work, you need lots of labelled training data. 
 
-Derivative represents rate of change. We want to understand how sensitive cost function is to small changes in weight, so derivative of cost w/ respect to weight. Nudge to weight causes nudge to z w/c causes nudge to *a* w/c causes nudge to cost.
+Derivative represents rate of change. We want to understand how sensitive cost function is to small changes in weight, so derivative of cost w/ respect to weight. Nudge to weight causes nudge to z w/c causes nudge to *a* w/c causes nudge to cost. You would do the same if you want to know how sensitive cost function is to small changes in bias (just take derivative of cost w/ respect to bias) and if you want to know how sensitive cost function is to small changes in activation of previous layer (just take derivative of cost w/ respect to activation of previous layer). So there are multiple chain rules happening at once: one that nudges the weight, one that nudges the bias, and one that nudges the activation of the previous layer to affect the activation of the current layer's neuron.
 ![screenshot from 3b1b backprop calculus showing that chain rule is how we nudge cost for a single training example](image.png)
 
