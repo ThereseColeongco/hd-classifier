@@ -62,7 +62,7 @@ cost function must have smooth output so we can find minimum w/c is why artifici
 Gradient descent = repeatedly nudging input of cost function by some multiple of negative gradient
 
 Sign of nudge tells us whether weight/bias should be nudged up (+) or down (-)
-Magnitude of nudge tells us whether weight/bias should be nudged a little, somewhat, or a lot (i.e. which changes matter more b/c big changes matter more/have bigger effect than small changes; some connections matter more for the training data; tells how sensitive ost functino is to each weight/bias: cost of function is more sensitive to changes in weight with the larger magnitude nudge b/c that change has a magnitude-times greater effect)
+Magnitude of nudge tells us whether weight/bias should be nudged a little, somewhat, or a lot (i.e. which changes matter more b/c big changes matter more/have bigger effect than small changes; some connections matter more for the training data; tells how sensitive cost function is to each weight/bias: cost of function is more sensitive to changes in larger-magnitude weight compared to the same amount of change in a smaller-magnitude weight)
 
 ### Limitations of MLP
 
@@ -74,5 +74,24 @@ Local minima that networks tend to learn are of roughly equal quality so if data
 
 ### Backpropagation
 
-Algo for computing gradient efficiently = backpropagation
+Backpropagation = algo for determining how single example would like to nudge weights/biases (relative proportion to changes -> most rapid decrease in cost)
 
+
+
+Algorithm for computing gradient efficiently = backpropagation
+
+Because cost function averages a certain cost per example over all training examples, the way we adjust weights/biases for a single gradient descent step, we theoretically depends on every single example. For computational efficiency, we have a trick to allow us to not have to go through each example.
+
+How much we want each activation to get nudged up or down depends on how far current activation is from target value.
+
+To increase activation of a neuron: increase bias, weights in proportion to activations, or activations from previous layer in proportion to weights. Pick the option that gives the most bang for your buck for the amount of change you want.
+
+It's called backpropagation because you go backwards through the neural network to sum up all desired effects on the activations to get a list of nudges we want to happen on the current layer. You do this for each training example so model can learn how to get to each, not just 1 of them.
+
+Collection of averaged nudges to each weight and bias = negative gradient of cost function or at least smth proportional to it
+
+Stochastic gradient descent: Takes extremely long to add up every influence of every example every descent step, so randomly shuffle training data, split into mini-batches, then compute descent on each mini-batch. 
+
+For this to work, you need lots of labelled training data. 
+
+Derivative represents rate of change. We want to understand how sensitive cost function is to small changes in weight, so derivative of cost w/ respect to weight. 
