@@ -2,7 +2,12 @@
 Decided to use a neural network, specifically MLP, for this, even if UCI says accuracy and precision are highest with XGBoost classification and logistic regression, because I want to learn how to build a neural network using PyTorch.
 
 ## How MLPs Work
-MLP stands for multilayer perceptron. It's the most basic kind of neural network. Neuron = a number. Each number aka activation corresponds to something... A neural network has more than 1 layer. activation in final layer of neurons represents how much the system thinks a certain feature corresponds with a certain target. There can be hidden layers in the network. Activations in 1 layer determine activations in next layer. 
+
+All neural networks feature connected nodes called neurons that receive information from neurons that are connected directly to it. In most networks, this creates a layered structure (in others, it forms a pool of neurons, etc.). These connections have a value that can be changed by experiencing data. That's about all that's common between ALL neural networks (there are many different types).
+
+MLP stands for multilayer perceptron. It's the most basic kind of neural network because it passes data straight from the first layer through to the last layer (a "feedforward" network). 
+
+Neuron = a number. Each number aka activation corresponds to something... A neural network has more than 1 layer. activation in final layer of neurons represents how much the system thinks a certain feature corresponds with a certain target. There can be hidden layers in the network. Activations in 1 layer determine activations in next layer. 
 
 Each layer should break down the problem into subproblems.
 
