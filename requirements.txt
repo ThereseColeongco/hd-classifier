@@ -1,7 +1,7 @@
 pandas
-torch
 numpy
+scikit-learn
+xgboost
+scipy
 seaborn
 matplotlib
-sklearn
-scipy
